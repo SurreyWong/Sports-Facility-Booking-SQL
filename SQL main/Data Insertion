@@ -1,0 +1,154 @@
+INSERT INTO OnlineStore (Store_ID, Store_Name, Store_Contact, Store_Link_Address)
+VALUES
+(‘6001’, 'Frenzo Riko', '0123456789', 'https://www.frenzoriko.com')
+
+INSERT INTO Customer (Cus_ID, Cus_Fname, Cus_Lname, Cus_Contact, Cus_Address)
+VALUES
+(‘1001’, 'John', 'Doe', '0129342913', '123 Main Street'),
+(‘1002’, 'Jane', 'Smith', '0172849382', '456 Elm Avenue'),
+(‘1003’, 'Michael', 'Johnson', '0135846283', '789 Oak Lane'),
+(‘1004’, 'Emily', 'Davis', '0122940101', '321 Pine Road'),
+(‘1005’, 'Daniel', 'Wilson', '0122947381', '567 Maple Avenue')
+
+INSERT INTO Sports (Sports_ID, Sports_Name)
+VALUES
+(‘2001’, 'Badminton'),
+(‘2002’, 'Tennis'),
+(‘2003’, 'Swimming'),
+(‘2004’, 'Netball'),
+(‘2005’, 'Basketball'),
+(‘2006’, 'Volleyball'),
+(‘2007’, 'Soccer')
+
+INSERT INTO Facility (Facility_ID, Facility_Name, Hourly_Rate, Sports_ID)
+VALUES
+(‘3001’, 'Badminton Court 1', 10.00, ‘2001’),
+(‘3002’, 'Badminton Court 2', 10.00, ‘2001’),
+(‘3003’, 'Badminton Court 3', 10.00, ‘2001’),
+(‘3004’, 'Tennis Court 1', 15.00, ‘2002’),
+(‘3005’, 'Tennis Court 2', 15.00, ‘2002’),
+(‘3006’, 'Tennis Court 3', 15.00, ‘2002’),
+(‘3007’, 'Swimming Pool 1', 20.00, ‘2003’),
+(‘3008’, 'Swimming Pool 2', 20.00, ‘2003’),
+(‘3009’, 'Netball Field 1', 12.00, ‘2004’),
+(‘3010’, 'Netball Field 2', 12.00, ‘2004’),
+(‘3011’, 'Basketball Court 1', 12.50, ‘2005’),
+(‘3012’, 'Basketball Court 2', 12.50, ‘2005’),
+(‘3013’, 'Volleyball Court 1', 10.00, ‘2006’),
+(‘3014’, 'Volleyball Court 2', 10.00, ‘2006’),
+(‘3015’, 'Soccer Field', 25.00, ‘2007’)
+
+INSERT INTO Staff (Staff_ID, Staff_Fname, Staff_Lname, Staff_Contact, Staff_Gender,
+Staff_Age, Staff_Country, Staff_HireDate, Facility_ID)
+VALUES
+(‘5001’, 'Jack', 'Frost', '0123456789', 'M', 25,'New Zealand', '2023-01-01', ‘3001’),
+(‘5002’, 'The', 'Rock', '0191037583', 'F', 28, DEFAULT, '2023-02-01', ‘3001’),
+(‘5003’, 'David', 'Johnson', '0176543210', 'M', 32, DEFAULT, '2023-03-01', ‘3001’),
+(‘5004’, 'Emily', 'Brown', '0112345678', 'F', 27, 'India', '2023-04-01', ‘3002’),
+(‘5005’, 'Michael', 'Jones', '0187654321', 'M', 29, DEFAULT, '2023-05-01', ‘3002’),
+(‘5006’, 'Sarah', 'Davis', '0165432109', 'F', 31, 'England', '2023-06-01', ‘3002’),
+(‘5007’, 'Daniel', 'Wilson', '0125555555', 'M', 26, DEFAULT, '2023-07-01', ‘3003’),
+(‘5008’, 'Olivia', 'Taylor', '0198765432', 'F', 30, 'India', '2023-08-01', ‘3003’),
+(‘5009’, 'Matthew', 'Anderson', '01111111111', 'M', 33, DEFAULT, '2023-09-01', ‘3003’)
+
+INSERT INTO Staff (Staff_ID, Staff_Fname, Staff_Lname, Staff_Contact, Staff_Gender,
+Staff_Age, Staff_Country, Staff_HireDate, Facility_ID)
+VALUES
+(‘5011’, 'William', 'Martinez', '0112222222', 'M', 27, DEFAULT, '2023-01-01', ‘3004’),
+(‘5012’, 'Ava', 'Garcia', '0113333333', 'F', 30, DEFAULT, '2023-02-01', ‘3004’),
+(‘5013’, 'James', 'Rodriguez', '0114444444', 'M', 32, DEFAULT, '2023-03-01', ‘3004’),
+(‘5014’, 'Mia', 'Lopez', '0115555555', 'F', 25, DEFAULT, '2023-04-01', ‘3005’),
+(‘5015’, 'Benjamin', 'Hernandez', '0116666666', 'M', 28, DEFAULT, '2023-05-01', ‘3005’),
+(‘5016’, 'Charlotte', 'Ramirez', '0117777777', 'F', 31, DEFAULT, '2023-06-01', ‘3005’),
+(‘5017’, 'Daniel', 'Gonzalez', '0118888888', 'M', 26, 'China', '2023-07-01', ‘3006’),
+(‘5018’, 'Amelia', 'Perez', '0119999999', 'F', 29, 'England', '2023-08-01', ‘3006’),
+(‘5019’, 'Joseph', 'Sanchez', '0121111111', 'M', 33, 'China', '2023-09-01', ‘3006’)
+
+INSERT INTO Staff (Staff_ID, Staff_Fname, Staff_Lname, Staff_Contact, Staff_Gender,
+Staff_Age, Staff_Country, Staff_HireDate, Facility_ID)
+VALUES
+(‘5021’, 'Michael', 'King', '0122222222', 'M', 32, DEFAULT, '2023-01-01', ‘3007’),
+(‘5022’, 'Abigail', 'Lee', '0123333333', 'F', 27, DEFAULT, '2023-02-01', ‘3007’),
+(‘5023’, 'Ethan', 'Wong', '0124444444', 'M', 29, DEFAULT, '2023-03-01', ‘3007’),
+(‘5024’, 'Elizabeth', 'Tan', '0128888888', 'F', 31, DEFAULT, '2023-04-01', ‘3008’),
+(‘5029’, 'Daniel', 'Wong', '0126666666', 'M', 28, DEFAULT, '2023-09-01', ‘3008’),
+(‘5030’, 'Chloe', 'Lim', '0127777777', 'F', 31, DEFAULT, '2023-10-01', ‘3008’)
+
+INSERT INTO Staff (Staff_ID, Staff_Fname, Staff_Lname, Staff_Contact, Staff_Gender,
+Staff_Age, Staff_Country, Staff_HireDate, Facility_ID)
+VALUES
+(‘5031’, 'Andrew', 'Tan', '0129999999', 'M', 27, DEFAULT, '2023-01-01', ‘3009’),
+(‘5032’, 'Grace', 'Teo', '0130000000', 'F', 29, DEFAULT, '2023-02-01', ‘3009’),
+(‘5033’, 'Benjamin', 'Lau', '0131111111', 'M', 32, DEFAULT, '2023-03-01', ‘3009’),
+(‘5034’, 'Sophia', 'Koh', '0132222222', 'F', 25, DEFAULT, '2023-04-01', ‘3010’),
+(‘5035’, 'Ryan', 'Tay', '0133333333', 'M', 28, 'India', '2023-05-01', ‘3010’),
+(‘5036’, 'Emma', 'Wong', '0134444444', 'F', 31, DEFAULT, '2023-06-01', ‘3010’)
+
+INSERT INTO Staff (Staff_ID, Staff_Fname, Staff_Lname, Staff_Contact, Staff_Gender,
+Staff_Age, Staff_Country, Staff_HireDate, Facility_ID)
+VALUES
+(‘5041’, 'Jackson', 'Yap', '0135555555', 'M', 32, DEFAULT, '2023-01-01', ‘3011’),
+(‘5042’, 'Hannah', 'Lee', '0136666666', 'F', 25, DEFAULT, '2023-02-01', ‘3011’),
+(‘5043’, 'Elijah', 'Chin', '0137777777', 'M', 28, DEFAULT, '2023-03-01', ‘3011’),
+(‘5044’, 'Victoria', 'Tan', '0138888888', 'F', 31, DEFAULT, '2023-04-01', ‘3012’),
+(‘5045’, 'Samuel', 'Lim', '0139999999', 'M', 26, DEFAULT, '2023-05-01', ‘3012’),
+(‘5046’, 'Avery', 'Koh', '0140000000', 'F', 30, DEFAULT, '2023-06-01', ‘3012’)
+
+INSERT INTO Staff (Staff_ID, Staff_Fname, Staff_Lname, Staff_Contact, Staff_Gender,
+Staff_Age, Staff_Country, Staff_HireDate, Facility_ID)
+VALUES
+(‘5051’, 'Chrishen', 'Tan', '0141111111', 'M', 32, DEFAULT, '2023-01-01', ‘3013’),
+(‘5052’, 'Natalie', 'Goh', '0142222222', 'F', 25, DEFAULT, '2023-02-01', ‘3013’),
+(‘5053’, 'Andrew', 'Wong', '0143333333', 'M', 28, DEFAULT, '2023-03-01', ‘3013’),
+(‘5054’, 'Sophie', 'Lim', '0144444444', 'F', 31, DEFAULT, '2023-04-01', ‘3014’),
+(‘5055’, 'Samuel', 'Chen', '0145555555', 'M', 26, DEFAULT, '2023-05-01', ‘3014’),
+(‘5056’, 'Chloe', 'Lau', '0146666666', 'F', 30, DEFAULT, '2023-06-01', ‘3014’)
+
+INSERT INTO Staff (Staff_ID, Staff_Fname, Staff_Lname, Staff_Contact, Staff_Gender,
+Staff_Age, Staff_Country, Staff_HireDate, Facility_ID)
+VALUES
+(‘5061’, 'William', 'Lim', '01511111111', 'M', 32, DEFAULT, '2023-01-01', ‘3015’),
+(‘5062’, 'Ava', 'Goh', '0152222222', 'F', 25, DEFAULT, '2023-02-01', ‘3015’),
+(‘5063’, 'James', 'Tan', '0153333333', 'M', 28, 'New Zealand', '2023-03-01', ‘3015’),
+(‘5064’, 'Mia', 'Chen', '0154444444', 'F', 31, 'New Zealand', '2023-04-01', ‘3015’),
+(‘5065’, 'Benjamin', 'Lau', '0155555555', 'M', 26, DEFAULT, '2023-05-01', ‘3015’)
+
+INSERT INTO Booking (Booking_ID, Cus_ID, Facility_ID, Booking_Date, Booking_Time,
+Booking_Duration, Payment_Total, Payment_Date, Payment_Time, Store_ID)
+VALUES
+(‘7001’, ‘1001’, ‘3006’, '2023-02-03', '15:45:00', '2 Hours', 30.00, '2023-01-20', '17:23:34',
+‘6001’),
+(‘7002’, ‘1002’, ‘3007’, '2023-02-12', '16:20:00', '2 Hours', 35.00, '2023-02-01', '12:12:13',
+‘6001’),
+(‘7003’, ‘1001’, ‘3013’, '2023-02-13', '17:00:00', '1 Hour' , 5.00, '2023-02-01', '15:34:11',
+‘6001’),
+(‘7004’, ‘1003’, ‘3012’, '2023-02-13', '17:00:00', '2 Hours', 15.00, '2023-02-02', '13:23:10',
+‘6001’),
+(‘7005’, ‘1004’, ‘3001’, '2023-02-14', '16:00:00', '2 Hours', 20.00, '2023-02-10', '08:34:55',
+‘6001’),
+(‘7006’, ‘1005’, ‘3001’, '2023-02-14', '18:00:00', '1 Hour' , 7.00, '2023-02-11', '14:56:13',
+‘6001’),
+(‘7007’, ‘1001’, ‘3015’, '2023-02-20', '18:00:00', '2 Hours', 35.00, '2023-02-11', '12:34:00',
+‘6001’)
+
+INSERT INTO Voucher (Voucher_ID, V_Discount, Booking_ID)
+VALUES
+(‘9001’, 5.00, ‘7002’),
+(‘9002’, 5.00, ‘7003’),
+(‘9003’, 10.00, ‘7004’),
+(‘9004’, 3.00, ‘7006’),
+(‘9005’, 15.00, ‘7007’)
+
+INSERT INTO Description (Des_ID, Des_Note, Booking_ID)
+VALUES
+(‘8001’, 'Please provide the tennis balls.', ‘7001’),
+(‘8002’, 'Put the net up beforehand.', ‘7003’),
+(‘8003’, 'Basketball balls not needed', ‘7004’),
+(‘8004’, 'Place the rackets and shuttlecocks by the post', ‘7005’)
+
+INSERT INTO Rating (Rating_ID, Reviews, Booking_ID)
+VALUES
+(‘10001’, 'Open space with not a lot of shade, but good enough for tennis.', ‘7001’),
+(‘10002’, 'Large area for playing with good ventilation', ‘7003’),
+(‘10003’, 'Facility and equipment were well taken care of. Good service.', ‘7005’),
+(‘10004’, 'Friendly staff and clean space.', ‘7006’)

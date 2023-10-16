@@ -1,0 +1,96 @@
+1.Aggregate Function
+
+[COUNT]
+SELECT COUNT (DISTINCT Payment_Total)
+FROM Booking;
+SELECT COUNT (DISTINCT Payment_Total)
+FROM Booking
+WHERE Payment_Total > 10.00;
+SELECT COUNT(*)
+FROM BOOKING
+WHERE PAYMENT_DATE >'2023-02-01'
+SELECT COUNT (*)
+FROM Booking
+WHERE Payment_Total > 10.00;
+SELECT COUNT (*)
+FROM Booking
+WHERE Payment_Total < 10.00;
+SELECT COUNT(Sports_Name)
+FROM Sports
+WHERE Sports_Name LIKE 'B%'
+
+[MAX]
+SELECT MAX(Payment_Total)
+FROM Booking;
+SELECT Booking_ID, Cus_ID, Facility_ID, Booking_Date, Booking_Time, Booking_Duration,
+Payment_Total, Payment_Date, Payment_Time, Store_ID
+FROM Booking
+WHERE Payment_Total = (SELECT MAX(Payment_Total) FROM Booking);
+
+[MIN]
+SELECT MIN(Payment_Total)
+FROM Booking;
+SELECT Booking_ID, Cus_ID, Facility_ID, Booking_Date, Booking_Time, Booking_Duration,
+Payment_Total, Payment_Date, Payment_Time, Store_ID
+FROM Booking
+WHERE Payment_Total = (SELECT MIN(Payment_Total) FROM Booking);
+
+[AVG]
+SELECT AVG(Hourly_Rate) AS Average_Rate
+FROM Facility
+
+2.Query Group By and Having Clause
+
+SELECT Staff_Fname, Staff_Lname
+FROM Staff
+WHERE Staff_Country = 'Malaysia'
+GROUP BY Staff_Fname, Staff_Lname
+HAVING COUNT(*) > 0
+
+3.Stored Procedure
+
+CREATE PROCEDURE VoPro(IN VoucherID CHAR(5), IN Discount Decimal(7,2))
+BEGIN
+UPDATE Voucher SET V_Discount = V_Discount + Discount
+WHERE Voucher_ID = VoucherID;
+END;
+
+4.View
+
+CREATE VIEW FacilityView AS
+SELECT Facility_ID, Facility_Name, Hourly_Rate, Sports_ID
+FROM Facility
+WHERE Hourly_Rate > 10.00
+
+5.Nested Query
+
+SELECT Facility_ID, Facility_Name, Hourly_Rate
+FROM Facility
+WHERE Sports_ID IN (
+SELECT Sports_ID FROM Sports WHERE Sports_Name = 'Badminton')
+
+6.Limit
+
+SELECT * FROM Staff
+LIMIT 15
+
+7.Union
+
+SELECT Facility_Name FROM Facility
+UNION
+SELECT Sports_Name FROM Sports
+
+8.Case
+
+SELECT Booking_ID,
+CASE
+WHEN Booking_Duration = '2 Hours' THEN 'Long Duration'
+WHEN Booking_Duration = '1 Hour' THEN 'Short Duration'
+ELSE 'Unknown Duration'
+END AS Duration_Category
+FROM Booking
+
+9.Concat
+
+SELECT Cus_Fname || ' ' || Cus_Lname AS Full_Name, Cus_Address || ', ' || Cus_Contact
+AS Full_Address FROM Customer

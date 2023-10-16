@@ -1,0 +1,86 @@
+# Database Creation
+
+CREATE DATABASE Sports
+CONNECT TO Sports
+
+# Table Creation
+
+CREATE TABLE OnlineStore(
+Store_ID CHAR(5) NOT NULL,
+Store_Name VARCHAR(30),
+Store_Contact VARCHAR(15) NOT NULL,
+Store_Link_Address VARCHAR(30) NOT NULL,
+CONSTRAINT OnlineStore_pk PRIMARY KEY(Store_ID))
+
+CREATE TABLE Customer(
+Cus_ID CHAR(5) NOT NULL,
+Cus_Fname VARCHAR(10) NOT NULL,
+Cus_Lname VARCHAR(10) NOT NULL,
+Cus_Contact VARCHAR(15) NOT NULL UNIQUE,
+Cus_Address VARCHAR(30) NOT NULL,
+CONSTRAINT Customer_pk PRIMARY KEY(Cus_ID))
+
+CREATE TABLE Sports(
+Sports_ID CHAR(5) NOT NULL,
+Sports_Name VARCHAR(20) NOT NULL,
+CONSTRAINT Sports_pk PRIMARY KEY(Sports_ID))
+CREATE TABLE Facility(
+Facility_ID CHAR(5) NOT NULL,
+Facility_Name VARCHAR(30) NOT NULL,
+Hourly_Rate DECIMAL(7,2) NOT NULL,
+Sports_ID CHAR(5) NOT NULL,
+CONSTRAINT Facility_pk PRIMARY KEY(Facility_ID),
+FOREIGN KEY(Sports_ID) REFERENCES Sports)
+
+CREATE TABLE Staff(
+Staff_ID CHAR(5) NOT NULL,
+Staff_Fname VARCHAR(10) NOT NULL,
+Staff_Lname VARCHAR(10) NOT NULL,
+Staff_Contact VARCHAR(15) NOT NULL UNIQUE,
+Staff_Gender CHAR(1) CHECK(Staff_Gender in('F','M')),
+Staff_Age INT NOT NULL,
+Staff_Country VARCHAR(20) DEFAULT 'Malaysia',
+Staff_HireDate DATE,
+Facility_ID CHAR(5) NOT NULL,
+CONSTRAINT Staff_pk PRIMARY KEY(Staff_ID),
+FOREIGN KEY(Facility_ID) REFERENCES Facility)
+
+CREATE TABLE Booking(
+Booking_ID CHAR(5) NOT NULL UNIQUE,
+Cus_ID CHAR(5) NOT NULL,
+Facility_ID CHAR(5) NOT NULL,
+Booking_Date DATE NOT NULL,
+Booking_Time TIME NOT NULL,
+Booking_Duration VARCHAR(10) NOT NULL,
+Payment_Total DECIMAL(10,2) NOT NULL,
+Payment_Date DATE NOT NULL,
+Payment_Time TIME NOT NULL,
+Store_ID CHAR(5) NOT NULL,
+CONSTRAINT Booking_pk PRIMARY KEY(Booking_ID, Cus_ID, Facility_ID),
+FOREIGN KEY(Cus_ID) REFERENCES Customer,
+FOREIGN KEY(Facility_ID) REFERENCES Facility,
+FOREIGN KEY(Store_ID) REFERENCES OnlineStore)
+
+CREATE TABLE Voucher(
+Voucher_ID CHAR(5) NOT NULL,
+V_Discount DECIMAL(7,2),
+Booking_ID CHAR(5) NOT NULL,
+CONSTRAINT Voucher_pk PRIMARY KEY(Voucher_ID),
+CONSTRAINT Voucher_Booking_fk FOREIGN KEY(Booking_ID) REFERENCES
+Booking(Booking_ID))
+
+CREATE TABLE Description (
+Des_ID CHAR(5) NOT NULL,
+Des_Note VARCHAR(500),
+Booking_ID CHAR(5) NOT NULL,
+CONSTRAINT Description_pk PRIMARY KEY(Des_ID),
+CONSTRAINT Description_Booking_fk FOREIGN KEY (Booking_ID) REFERENCES
+Booking (Booking_ID))
+
+CREATE TABLE Rating(
+Rating_ID CHAR(5) NOT NULL,
+Reviews VARCHAR(500),
+Booking_ID CHAR(5) NOT NULL,
+CONSTRAINT Rating_pk PRIMARY KEY(Rating_ID),
+CONSTRAINT Rating_Booking_fk FOREIGN KEY(Booking_ID) REFERENCES
+Booking(Booking_ID))
